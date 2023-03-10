@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(
+        appBarTheme:const  AppBarTheme(
           backgroundColor: Colors.white,
-          iconTheme: const IconThemeData(color: Colors.black),
-          titleTextStyle: const TextStyle(
+          iconTheme:  IconThemeData(color: Colors.black),
+          titleTextStyle:  TextStyle(
               color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
         ),
         // This is the theme of your application.
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Almarai',
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
