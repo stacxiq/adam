@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         title: const Text('الرئيسية'),
       ),
       body: SafeArea(
