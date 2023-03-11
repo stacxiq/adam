@@ -1,3 +1,4 @@
+import 'package:adam/features/Auth/register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,14 +9,14 @@ class HomeLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController email = TextEditingController();
     final TextEditingController password = TextEditingController();
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
         title: const Text('تسجيل الدخول '),
         elevation: 0.0,
       ),
       body: Form(
-        key: _formKey,
+        key: formKey,
         child: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
@@ -33,6 +34,7 @@ class HomeLogin extends StatelessWidget {
                     height: 15,
                   ),
                   TextFormField(
+                    controller: email,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'رجاءا ادخل البريد الالكتروني الصحيح ';
@@ -51,6 +53,7 @@ class HomeLogin extends StatelessWidget {
                     height: 15,
                   ),
                   TextFormField(
+                    controller: password,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'رجاءا ادخل الرمز السري الصحيح ';
@@ -79,7 +82,7 @@ class HomeLogin extends StatelessWidget {
                                       side: const BorderSide(
                                           color: Colors.black)))),
                       onPressed: () {
-                        if (_formKey.currentState!.validate()) {
+                        if (formKey.currentState!.validate()) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('يرجى الانتظار ')),
                           );
@@ -94,7 +97,13 @@ class HomeLogin extends StatelessWidget {
                     children: [
                       const Text('ليس لديك حساب ؟'),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => RegisterPage(),
+                                ));
+                          },
                           child: const Text(
                             'سجل الان',
                             style: TextStyle(color: Colors.black),
