@@ -2,6 +2,8 @@ import 'package:adam/features/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../Auth/home_login.dart';
+
 class TapsPage extends StatefulWidget {
   int active;
   TapsPage({
@@ -13,13 +15,7 @@ class TapsPage extends StatefulWidget {
 }
 
 class _TapsPageState extends State<TapsPage> {
-  final _pages = [
-    HomePage(),
-    HomePage(),
-    HomePage(),
-    HomePage(),
-    HomePage(),
-  ];
+  final _pages = [HomePage(), HomePage(), HomePage(), HomePage(), HomeLogin()];
 
   @override
   Widget build(BuildContext context) {

@@ -18,11 +18,15 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        appBarTheme:const  AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
-          iconTheme:  IconThemeData(color: Colors.black),
-          titleTextStyle:  TextStyle(
-              color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+          iconTheme: IconThemeData(color: Colors.black),
+          titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Almarai',
+          ),
         ),
         // This is the theme of your application.
         //
