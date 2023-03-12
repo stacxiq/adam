@@ -43,7 +43,7 @@ dependencies:
   gap: ^2.0.1
   font_awesome: ^5.10.1
   font_awesome_flutter: ^10.4.0
-
+  image_picker: ^0.8.7
 dev_dependencies:
   flutter_test:
     sdk: flutter

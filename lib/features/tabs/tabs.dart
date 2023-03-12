@@ -1,3 +1,5 @@
+import 'package:adam/features/buypage.dart';
+import 'package:adam/features/card_page.dart';
 import 'package:adam/features/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -15,7 +17,7 @@ class TapsPage extends StatefulWidget {
 }
 
 class _TapsPageState extends State<TapsPage> {
-  final _pages = [HomePage(), HomePage(), HomePage(), HomePage(), HomeLogin()];
+  final _pages = [HomePage(), CardPage(), BuyPage(), HomePage(), HomeLogin()];
 
   @override
   Widget build(BuildContext context) {
