@@ -43,6 +43,19 @@ class _CardPageState extends State<CardPage> {
         title: const Text('الكارتات'),
         elevation: 0.0,
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
+        onPressed: () {
+          if (formKey.currentState!.validate()) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('يرجى الانتظار ')),
+            );
+          }
+        },
+        child: const Icon(Icons.add_outlined),
+
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       body: Form(
         key: formKey,
         child: SafeArea(
@@ -85,6 +98,7 @@ class _CardPageState extends State<CardPage> {
                   labelText: 'فئة الكارت',
                 ),
               )),
+              const SizedBox(height: 15,),
               MaterialButton(
                 onPressed: () {
                   uploadimage();
@@ -96,24 +110,7 @@ class _CardPageState extends State<CardPage> {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
-              const SizedBox(
-                height: 15,
-              ),
-              MaterialButton(
-                shape: const StadiumBorder(),
-                color: Colors.black,
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('يرجى الانتظار ')),
-                    );
-                  }
-                },
-                child: const Text(
-                  'اضافة',
-                  style: TextStyle(color: Colors.white),
-                ),
-              )
+            
             ],
           ),
         )),

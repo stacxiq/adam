@@ -23,7 +23,6 @@ class _BuyPageState extends State<BuyPage> {
     var imagepicker = ImagePicker();
     final formKey = GlobalKey<FormState>();
 
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
@@ -187,25 +186,58 @@ class _BuyPageState extends State<BuyPage> {
                 const SizedBox(
                   height: 15,
                 ),
-                MaterialButton(
-                  onPressed: () async {
-                    var pickedimage = await imagepicker.pickImage(
-                      source: ImageSource.gallery,
-                      maxWidth: 1800,
-                      maxHeight: 1800,
-                    );
-                    if (pickedimage != null) {
-                      setState(() {
-                        image = File(pickedimage.path);
-                      });
-                    } else {}
-                  },
-                  shape: const StadiumBorder(),
-                  color: Colors.black,
-                  child: const Text(
-                    "رفع صور ",
-                    style: TextStyle(color: Colors.white),
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children:const [
+                   Text("صورة الجهاز من الامام "), 
+                   Text("صورة الجهاز من الخلف")
+                  ],
+                ),
+                const SizedBox(height: 10,),
+                Row(
+                  children: [
+                    Container(
+                      height: 120,
+                      width: 115,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(15)),
+                        border: Border.all(),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    MaterialButton(
+                      onPressed: () async {
+                        var pickedimage = await imagepicker.pickImage(
+                          source: ImageSource.gallery,
+                          maxWidth: 1800,
+                          maxHeight: 1800,
+                        );
+                        if (pickedimage != null) {
+                          setState(() {
+                            image = File(pickedimage.path);
+                          });
+                        } else {}
+                      },
+                      shape: const StadiumBorder(),
+                      color: Colors.black,
+                      child: const Icon(Icons.add_outlined ,color: Colors.white),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Container(
+                      height: 120,
+                      width: 115,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(15)),
+                        border: Border.all(),
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(
                   height: 15,
@@ -233,4 +265,3 @@ class _BuyPageState extends State<BuyPage> {
     );
   }
 }
-
